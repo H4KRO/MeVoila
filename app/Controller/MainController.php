@@ -2,9 +2,12 @@
 
 class MainController {
   static function index(){
-    echo "index";
+    $view = "page";
+    $page = PageModel::get(ParameterModel::get("main_page"));
+    require_once('app/View/MainView.php');
   }
   static function not_found(){
-    echo "404";
+    $view = "404";
+    require_once('app/View/MainView.php');
   }
 }

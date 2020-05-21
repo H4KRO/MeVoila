@@ -1,6 +1,7 @@
 <?php
 
 require_once("app/Controller/MainController.php");
+require_once("app/Controller/PageController.php");
 require_once("app/Controller/BlogController.php");
 require_once("app/Controller/PortfolioController.php");
 
@@ -50,8 +51,10 @@ function compare_path($path, $path_req){
     return $min = 0;
   }
 
+  $parameters = array();
+
   for($i = 0; $i < $min; $i++){
-    if($path[$i] != $path_req[$i] && $path[$i] != "*"){
+    if($path[$i] != $path_req[$i] && $path[$i][0] != "*"){
       return false;
     }
   }
@@ -59,9 +62,21 @@ function compare_path($path, $path_req){
   return true;
 }
 
+function set_parameters($path, $path_req){
+  $GLOBALS['URL_PARAMETERS'] = array();
+  $path = get_path($path);
+  $path_req = get_path($path_req);
+  for($i = 0; $i < sizeof($path); $i++){
+    if($path[$i][0] == "*" && strlen($path[$i]) > 1){ 
+      $GLOBALS['URL_PARAMETERS'][substr($path[$i], 1)] = $path_req[$i];
+    }
+  }
+}
+
 function exec_route($routes_array){
   foreach($routes_array as $route => $controller_method){
     if(compare_path($route, $_SERVER['REQUEST_URI'])){
+      set_parameters($route, $_SERVER['REQUEST_URI']);
       $controller_method->exec();
       return;
     }

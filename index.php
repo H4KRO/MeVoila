@@ -3,17 +3,19 @@ require_once('app/config/config.php');
 require_once('app/Database/Database.php');
 Database::init();
 require_once('app/config/router.php');
+require_once('app/Model/PageModel.php');
+require_once('app/Model/UserModel.php');
+require_once('app/Model/ParameterModel.php');
+require_once('app/Model/NavigationModel.php');
+
+require_once('app/View/helper.php');
 
 $routes = array(
   "/" => route("MainController", "index"),
-  "/blog/" => route("BlogController", "main"),
-  "/blog/*" => route("BlogController", "category"),
-  "/blog/*/*" => route("BlogController", "article"),
-  "/portfolio/" => route("PortfolioController", "main"),
-  "/portfolio/*" => route("PortfolioController", "category"),
-  "/portfolio/*/*" => route("PortfolioController", "project")
+  "/*lang/" => route("MainController", "index"),
+  "/*lang/page/" => route("PageController", "main"),
+  "/page/" => route("PageController", "main"),
+  "/*lang/page/*page/" => route("PageController", "page"),
+  "/page/*page/" => route("PageController", "page")
 );
-
-echo "<pre>";
-print_r(exec_route($routes));
-echo "</pre>";
+exec_route($routes);
