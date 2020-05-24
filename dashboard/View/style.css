@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
+:root {
+  --color-1: #85c1e9;
+  --color-2: #3498db;
+  --color-3: #21618c;
+  --color-4: #1c2833;
+  --color-5: white;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  font-family: 'Pacifico', cursive;
+  background-color: var(--color-2);
+  color: var(--color-5);
+  padding-left: 2%;
+}
+
+nav {
+  font-family: 'Teko', sans-serif;
+  background-color: var(--color-3);
+  position: fixed;
+  width: 10%;
+  height: 100%;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+nav a {
+  color: var(--color-5);
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 1.3em;
+}
+
+nav a:hover {
+  background-color: var(--color-4);
+}
+
+nav a, nav a:hover {
+  transition: background-color .5s;
+}
+
+footer {
+  font-family: 'Teko', sans-serif;
+  width: 100%;
+  background-color: var(--color-2);
+  color: var(--color-5);
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  z-index: -1;
+}

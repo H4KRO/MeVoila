@@ -2,11 +2,22 @@
 require_once('app/config/config.php');
 require_once('app/Database/Database.php');
 Database::init();
+
 require_once('app/config/router.php');
-require_once('app/Model/PageModel.php');
-require_once('app/Model/UserModel.php');
-require_once('app/Model/ParameterModel.php');
-require_once('app/Model/NavigationModel.php');
+const APP_DIR = "app/";
+$files = scandir(APP_DIR . "Model/");
+foreach($files as $file){
+  if(strpos($file, '.php')){
+    require_once(APP_DIR . "Model/" . $file);
+  }
+}
+
+$files = scandir(APP_DIR . "Controller/");
+foreach($files as $file){
+  if(strpos($file, '.php')){
+    require_once(APP_DIR . "Controller/" . $file);
+  }
+}
 
 $routes = array(
   "/" => route("MainController", "index"),
