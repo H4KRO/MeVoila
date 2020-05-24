@@ -3,6 +3,8 @@
 :root {
   --font-color-1: black;
   --color-1: #f5b041;
+  --color-2: #f39c12;
+  --color-3: #e5e7e9;
 }
 
 html {
@@ -117,7 +119,7 @@ select{
 	box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
-	border:1px solid #BEBEBE;
+	border:1px solid var(--color-3);
 	padding: 7px;
 	margin:0px;
 	-webkit-transition: all 0.30s ease-in-out;
@@ -152,17 +154,23 @@ form .field-textarea{
 	height: 100px;
 }
 form input[type=submit], form input[type=button]{
-	background: #4B99AD;
+	background: var(--color-1);
 	padding: 8px 15px 8px 15px;
 	border: none;
-	color: #fff;
+	color: white;
 }
 form input[type=submit]:hover, form input[type=button]:hover{
-	background: #4691A4;
+	background: var(--color-2);
 	box-shadow:none;
 	-moz-box-shadow:none;
 	-webkit-box-shadow:none;
+  cursor: pointer;
 }
+
+form input[type=submit], form input[type=button], form input[type=submit]:hover, form input[type=button]:hover{
+  transition: background-color .5s;
+}
+
 form .required{
 	color:red;
 }
