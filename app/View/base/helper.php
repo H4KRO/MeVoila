@@ -13,7 +13,7 @@ function display_link($destination, $label){
 }
 
 function display_menu($menu_items){
-  echo "<ol>";
+  echo "<ul>";
   foreach($menu_items as $item){
     echo "<li>";
     if(isset($item->destination)){
@@ -25,6 +25,6 @@ function display_menu($menu_items){
       display_menu($item->childrens);
     }
   }
-  echo "</ol>";
+  echo "</ul>";
 }
  ?>

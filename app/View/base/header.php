@@ -9,4 +9,6 @@
 <body>
   <header>
     <h1><?php echo ParameterModel::get("title"); ?></h1>
+    <?php require_once($template_path . 'nav.php'); ?>
   </header>
+  <main>

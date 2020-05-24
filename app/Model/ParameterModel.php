@@ -8,7 +8,7 @@ class ParameterModel {
     if(sizeof($result) > 0){
       return $result[0]['value'];
     }else{
-      return "Unknow parameter " . $key . ".";
+      return false;
     }
   }
 }

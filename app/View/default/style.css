@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+  --color-0: white;
+  --color-1: #5d6d7e;
+  --color-2: #aeb6bf;
+  --color-3: #283747;
+}
+
+html
+{
+    padding:0px;
+}
+
+body
+{
+    margin:0px;
+    padding:0px;
+    top:0px;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  text-align: center;
+  background-color: var(--color-2);
+}
+nav {
+  background-color: var(--color-1);
+}
+
+nav li, nav li:hover {
+  transition: background-color .5s;
+}
+
+nav ul {
+  padding-left: 0;
+}
+
+nav li:hover {
+  background-color: var(--color-2);
+}
+
+nav a, nav a:hover, nav a:visited {
+  color: white;
+}
+
+nav > ul a {
+	display:block;
+	text-decoration:none;
+}
+
+nav > ul > li {
+  border-left-style: solid;
+  border-left-color: white;
+  border-left-width: 4px;
+}
+
+nav > ul > li:last-child {
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: 4px;
+}
+
+nav > ul > li,
+nav > ul > li li {
+	position: relative;
+	display:inline-block;
+	width: 110px;
+	padding: 6px 15px;
+}
+
+nav li {
+  background-color:  var(--color-1);
+}
+
+nav > ul > li li {
+  background: transparent none;
+  background-color: var(--color-1);
+}
+
+nav > ul > li:first-child {
+
+}
+
+nav > ul > li:last-child {
+
+}
+
+nav > ul ul {
+	position: absolute;
+	top: 1.9em; left: 0;
+	max-height:0em;
+	margin: 0; padding: 0;
+	overflow: hidden;
+	transition: 1s max-height 0.3s;
+}
+
+nav > ul > li:hover ul {
+	max-height: 13em;
+}

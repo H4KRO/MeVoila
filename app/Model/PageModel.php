@@ -34,7 +34,11 @@ class PageModel {
     return $pages;
   }
   function complete_url(){
-    return BASE_URL . $this->lang . "/page/" . $this->url;
+    if($this->homepage){
+      return BASE_URL . $this->lang . $this->url;
+    }else{
+      return BASE_URL . $this->lang . "/page/" . $this->url;
+    }
   }
 }
  ?>

@@ -8,8 +8,6 @@ require_once('app/Model/UserModel.php');
 require_once('app/Model/ParameterModel.php');
 require_once('app/Model/NavigationModel.php');
 
-require_once('app/View/helper.php');
-
 $routes = array(
   "/" => route("MainController", "index"),
   "/*lang/" => route("MainController", "index"),
@@ -18,4 +16,5 @@ $routes = array(
   "/*lang/page/*page/" => route("PageController", "page"),
   "/page/*page/" => route("PageController", "page")
 );
+
 exec_route($routes);
