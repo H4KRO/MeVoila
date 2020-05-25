@@ -2,7 +2,8 @@
 
 const APP_DIR = "../app/";
 const DEFAULT_LANG = "fr";
-const BASE_URL 		= "http://localhost/mevoila/dashboard";
+const BASE_URL 		= "http://localhost/mevoila/";
+const BASE_URL_DASHBOARD 		= "http://localhost/mevoila/dashboard";
 const DB_LOCATION = APP_DIR . "Database/database.sqlite3";
 
 require_once(APP_DIR . 'Database/database.php');

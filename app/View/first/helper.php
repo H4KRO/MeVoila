@@ -27,7 +27,7 @@ function display_menu($menu_items){
   foreach($menu_items as $item){
     echo "<li>";
     if(isset($item->destination)){
-      display_menu_link(BASE_URL . $item->destination, $item->label);
+      display_menu_link($item->destination, $item->label);
     }else{
       echo $item->label;
     }
